@@ -1,0 +1,125 @@
+ä<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Use the original Bugblat Pif Lattice FPGA on Raspberry Pi 2 and 3</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">body{margin:40px auto;max-width:700px;text-align:justify;line-height:1.6;font-size:16px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}</style>
+  <style type="text/css">img{margin: 10px; max-width:600px; border: 2px solid #d0d0d0;}</style>
+  <style type="text/css">pre{border-radius: 10px;min-width:700px; margin-left: -10%;padding: 3%;padding-left: 7%; background: #002451; </style>
+
+<link rel="stylesheet" href="/highlight/styles/tomorrow-night-blue.css">
+<script src="/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<h1>/sys/class/mimoja</h1>
+<div id="header">
+<h1 class="title">Use the original Bugblat Pif Lattice FPGA on Raspberry Pi 2 and 3</h1>
+</div>
+<hr />
+<p><strong>TLDR:</strong></p>
+<ul>
+<li>Enable I2C and disable SPI in <code>rasp-config</code></li>
+<li>Update <a href="http://www.airspayce.com/mikem/bcm2835/"><code>C library for Broadcom BCM 2835</code></a></li>
+<li>Rebuild <code>libpif</code> with the updated header for Pi 2 and 3 using <code>clang/clang++</code></li>
+</ul>
+<hr />
+<h2 id="resources">Resources</h2>
+<p>Bugblat does not longer list the resources for the original PIF on their site. They can be found here:</p>
+<ul>
+<li><a href="https://www.bugblat.com/products/pif/pif.pdf">Manual</a></li>
+<li><a href="https://www.bugblat.com/products/pif/pif_sch.pdf">Schematic</a></li>
+<li><a href="https://www.bugblat.com/products/pif/pif.zip">Software/Firmware Bundle</a></li>
+<li><a href="https://github.com/bugblat/pif">Github Repo</a></li>
+</ul>
+<h2 id="enable-i2c-and-disable-spi">Enable I2C and Disable SPI</h2>
+<p>Run <code>sudo rasp-config</code> and choose <code>5 Interfacing Options</code> in the menu. <a href="tech/0x01/raspi-config_menu.PNG"><img src="tech/0x01/raspi-config_menu_scaled.jpg" title="aspi-config menu" /></a></p>
+<ul>
+<li>Disable SPI</li>
+<li>Enable I2C</li>
+</ul>
+<p><a href="tech/0x01/raspi-config_spi.PNG"><img src="tech/0x01/raspi-config_spi_scaled.jpg" title="aspi-config menu" /></a> <a href="tech/0x01/raspi-config_i2c.PNG"><img src="tech/0x01/raspi-config_i2c_scaled.jpg" title="aspi-config menu" /></a></p>
+<h2 id="install-i2ctools-and-check-modules">Install i2ctools and check modules</h2>
+<p>Execute <code>sudo apt install i2c-tools python-smbus</code> to install i2c-tools</p>
+<p>Check if both <code>i2c_dev</code> and <code>i2c_2708</code> are present by running <code>lsmod | grep i2c*</code> . In case one is mising try to load them with</p>
+<ul>
+<li><code>sudo modprobe i2c_2708</code></li>
+<li><code>sudo modprobe i2c_dev</code></li>
+</ul>
+<p>To auto-load them after reboot add the module name (if necessary) to <code>/etc/modules</code>.</p>
+<h2 id="download-broadcom-c-wrapper-library">Download Broadcom C wrapper library</h2>
+<p><strong>For this library to work correctly on RPI2/3, you MUST have the device tree support enabled in the kernel. Modern Raspbian version have this enabled by default.</strong></p>
+<p>The C library is hosted at <a href="http://www.airspayce.com/mikem/bcm2835">airspace.com</a>. The current version as of writing is 1.52.</p>
+<p>We build and install the library:</p>
+<pre><code>wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
+tar xzvf bcm2835-1.52.tar.gz
+cd bcm2835-1.52
+./configure
+make
+sudo make install
+cd ..</code></pre>
+<h2 id="build-libpif">Build libpif</h2>
+<p>You can <em>either</em> download the <a href="www.bugblat.com/products/pif/pif.zip">Software/Firmware Bundle</a>:</p>
+<ul>
+<li><code>wget www.bugblat.com/products/pif/pif.zip</code></li>
+<li><code>unzip pif.zip</code></li>
+</ul>
+<p>Or clone the <a href="https://github.com/bugblat/pif">Github Repo</a></p>
+<ul>
+<li><code>git clone https://github.com/bugblat/pif</code></li>
+</ul>
+<p>Copy the downloaded bcm2835.{c,h} from the <code>Broadcom C wrapper library</code> to the libpif <code>src</code> folder: <code>cp bcm2835-1.52/src/bcm2835.* pif/software/src</code></p>
+<p>Now we try to build (which is most likely to fail): <code>cd pif/software/src make</code></p>
+<p>If building fails with errors like this:</p>
+<pre><code>g++ -c -o pif.o -ansi -Wall -g -fPIC -I. -DBUILDING_LIBPIF -fvisibility=hidden -fvisibility-inlines-hidden pif.cpp
+pif.cpp: In member function ‘bool Tpif::_progPage(int, const uint8_t*)’:
+pif.cpp:320:32: error: taking address of temporary array
+   nanosleep((struct timespec[]){{0, (200 * MICROSEC)}}, NULL);
+                                ^~~~~~~~~~~~~~~~~~~~~~~
+pif.cpp: In member function ‘bool Tpif::setUsercode(uint8_t*)’:
+pif.cpp:398:32: error: taking address of temporary array
+   nanosleep((struct timespec[]){{0, (200 * MICROSEC)}}, NULL);
+                                ^~~~~~~~~~~~~~~~~~~~~~~
+makefile:17: recipe for target &#39;pif.o&#39; failed
+make: *** [pif.o] Error 1</code></pre>
+<p>we will have to modify the <code>makefile</code> as modern gcc versions (&gt;=gcc-4) do not support using the address of a temporary array.</p>
+<p>To solve this without modifiering the source we can simply use clang:</p>
+<ul>
+<li><code>sudo apt install clang</code></li>
+<li><code>sed -i 's/gcc/clang/g' makefile</code></li>
+<li><code>sed -i 's/g++/clang++/g' makefile</code></li>
+</ul>
+<p>Now</p>
+<ul>
+<li><code>make</code></li>
+<li><code>sudo make install</code></li>
+</ul>
+<p>should succeed.</p>
+<h2 id="test-configuration">Test configuration</h2>
+<p><code>i2cdetect -y 1</code> should output something like this:</p>
+<pre><code>$ i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: 20 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --</code></pre>
+<p>Lets try to access the pif via libpif: From within the <code>pif/software</code> folder execute: <code>sudo python piffind.py</code>. Which should prompt:</p>
+<pre><code>================= pif find ========================
+Using pif library version: &#39;libpif,Nov 18 2017,22:23:31&#39;
+
+XO2 Device ID: 012bd043  - device is an XO2-7000HC
+
+==================== bye ==========================</code></pre>
+<p>Congratulations! You can access your pif.</p>
+<br>
+<a href="index.html">home</a>
+</body>
+</html>
