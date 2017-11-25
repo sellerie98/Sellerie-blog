@@ -34,7 +34,7 @@ Bugblat does not longer list the resources for the original PIF on their site. T
 
 Create a new project:
 
-[![](tech/0x02/diamond_new_project_scaled.jpg "new project")](tech/0x02/diamond_new_project.PNG)
+[![](0x02/diamond_new_project_scaled.jpg "new project")](0x02/diamond_new_project.PNG)
 
 First of all we will locate the `$ProjectName.lpf` file and add the line 
 
@@ -44,7 +44,7 @@ Therefore we wont lock ourself out of I2C->SPI flashing.
 
 Now add a VHDL file to the project:
 
-[![](tech/0x02/diamond_new_file_scaled.jpg "new file")](tech/0x02/diamond_new_file.PNG)
+[![](0x02/diamond_new_file_scaled.jpg "new file")](0x02/diamond_new_file.PNG)
 
 ```
 LIBRARY ieee;
@@ -104,7 +104,7 @@ IOBUF PORT "LEDG" IO_TYPE=LVCMOS33 PULLMODE=DOWN ;
 
 On the left in the `process` tab we can now choose `JEDEC File` and use a Doubleclick on that target to synthesize.
 
-[![](tech/0x02/diamond_syn_scaled.jpg "new file")](tech/0x02/diamond_syn.PNG)
+[![](0x02/diamond_syn_scaled.jpg "new file")](0x02/diamond_syn.PNG)
 
 
 Find the `.jed` file in your implementation folder and copy it over to your raspberry pi, where you can flash via:
@@ -168,7 +168,7 @@ JEDEC file does not match FPGA
 
 Bugblat added a reset test pad that can be used to bring the PIF back up.
 
-[![](tech/0x02/pif_reset_scaled.jpg "pif reset pad")](tech/0x02/pif_reset.jpg)
+[![](0x02/pif_reset_scaled.jpg "pif reset pad")](0x02/pif_reset.jpg)
 
 Connect the testpad to `GND` and recover by flashing the default firmware:
 

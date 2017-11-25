@@ -48,22 +48,22 @@ Connect the USB stick, power and monitor the serial output. You should see somet
 
 Press F10, choose your USB stick and hit enter.
 
-![](tech/0x00/bootup.png "bootup")
+![](0x00/bootup.png "bootup")
 
 In the now opening boot menu we need to modify the kernel cmdline. Choose `Install` and hit `TAB`.
 Now add **`console=ttyS0,115200n8`** after the `quiet`. Hit enter to boot the system.
 
-![](tech/0x00/bootup_menu.png "menu")
+![](0x00/bootup_menu.png "menu")
 
 ## Post Boot
 Follow the installation process and dont forget to enable **SSH-Server** if you want to control your device remotly after installation.
 
-![](tech/0x00/installer.png "installer")
+![](0x00/installer.png "installer")
 
 
 The Debian Stretch Installer will copy the kernel boot parameter so you should end up with a system outputting to serial after installation finished.
 
-![](tech/0x00/installing.png "installing")
+![](0x00/installing.png "installing")
 
 Reboot and enjoy!
 

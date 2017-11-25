@@ -21,13 +21,13 @@ Bugblat does not longer list the resources for the original PIF on their site. T
 
 ## Enable I2C and Disable SPI
 Run `sudo rasp-config` and choose `5 Interfacing Options` in the menu.
-[![](tech/0x01/raspi-config_menu_scaled.jpg "aspi-config menu")](tech/0x01/raspi-config_menu.PNG)
+[![](0x01/raspi-config_menu_scaled.jpg "aspi-config menu")](tech/0x01/raspi-config_menu.PNG)
 
  * Disable SPI
  * Enable I2C
 
-[![](tech/0x01/raspi-config_spi_scaled.jpg "aspi-config menu")](tech/0x01/raspi-config_spi.PNG)
-[![](tech/0x01/raspi-config_i2c_scaled.jpg "aspi-config menu")](tech/0x01/raspi-config_i2c.PNG)
+[![](0x01/raspi-config_spi_scaled.jpg "aspi-config menu")](0x01/raspi-config_spi.PNG)
+[![](0x01/raspi-config_i2c_scaled.jpg "aspi-config menu")](0x01/raspi-config_i2c.PNG)
 
 ## Install i2ctools and check modules
 Execute `sudo apt install i2c-tools python-smbus` to install i2c-tools

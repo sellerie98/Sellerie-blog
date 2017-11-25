@@ -18,7 +18,7 @@ Alle Zutaten in einer Schüssel verkneten. Bei Bedarf ein bisschen Wasser hinzug
 Den Teig in Frischhaltefolie einwickeln und eine Stunde Ruhen lassen. 
 
 ## Füllung
-[![](cook/0x00/prep_scaled.jpg "Vorbereitung")](cook/0x00/prep.jpg)
+[![](0x00/prep_scaled.jpg "Vorbereitung")](0x00/prep.jpg)
 
 ### Zutaten
 
@@ -36,7 +36,7 @@ Den Teig in Frischhaltefolie einwickeln und eine Stunde Ruhen lassen.
 ### Zubereitung
 Die Äpfel schälen und würfeln. In einer großen Pfanne oder Topf etwas Sonnenblumenöl erhitzen. In die sehr heiße Pfanne die Äpfel geben und mit dem braunen Zucker leicht karamelisieren.
 
-[![](cook/0x00/pan_scaled.jpg "Kochen")](cook/0x00/pan.jpg)
+[![](0x00/pan_scaled.jpg "Kochen")](0x00/pan.jpg)
 
 Die restlichen Zutaten hinzugeben und die Äpfel etwa 20 Minuten kochen bis sie nur noch in der Mitte etwas fest sind.
 
@@ -48,4 +48,4 @@ Den Teig dünn ausrollen und den Boden als auch die Seiten des Bleches damit aus
 
 Das Blech bei 180° für 45 Minuten backen, bis der Teig hellbraun ist.
 
-[![](cook/0x00/cake_scaled.jpg "Fertiger Kuchen")](cook/0x00/cake.jpg)
+[![](0x00/cake_scaled.jpg "Fertiger Kuchen")](0x00/cake.jpg)
