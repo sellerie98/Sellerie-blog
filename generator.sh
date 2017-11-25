@@ -40,11 +40,13 @@ for D in sources/*; do
 	    	    subfoldername=$(basename $CD);
 		    echo "moving     $CD -> $outputFolder/${foldername}/$subfoldername";
 		    cp -R $CD $outputFolder/${foldername}/;
-                    for image in $CD/*[{jpg}{PNG}]; do
+                    for image in $CD/*[{JPEG}{jpeg}{JPG}{jpg}{PNG}{png}]; do
 			baseimagename=$(basename $image);
-                        if [ ! -f $outputFolder/${foldername}/${baseimagename%%.*}_scaled.jpg ]; then
-			echo "Creating preview for $image";
-			convert -size 700x $image $outputFolder/${foldername}/${baseimagename%%.*}_scaled.jpg;
+                        if [ -f $outputFolder/${foldername}/${baseimagename%%.*}_scaled.jpg ]; then
+			    echo "Reusing preview for $image";
+		        else
+			    echo "Creating preview for $image";
+			    convert -size 700x $image $outputFolder/${foldername}/${baseimagename%%.*}_scaled.jpg;
 			fi
 		    done;
 		fi;
