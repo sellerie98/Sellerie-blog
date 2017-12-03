@@ -43,7 +43,8 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
     * [Chosing the right payload for you](https://www.coreboot.org/Payloads)
 
 ### Software
-  * For getting and compiling flashrom and coreboot you need the following dependencies: (sudo apt install) ``build-essential pciutils-dev zlib1g-dev  libfti-dev libusb-dev subversion git wiringpi libncurses5-dev``
+  * For getting and compiling flashrom and coreboot you need the following dependencies:
+```build-essential pciutils-dev zlib1g-dev  libfti-dev libusb-dev subversion git wiringpi libncurses5-dev```
   * [flashrom (I recommend the latest version)](https://www.flashrom.org/Downloads)
   * https://github.com/flashrom/flashrom (A valid git clone url)
   * [The latest version of coreboot](https://www.coreboot.org/Build_HOWTO#Building_coreboot)
@@ -121,3 +122,10 @@ chainloader (cbfsdisk)/img/<name of payload>
 }
 
 When you are not sure about the name, you can check it with cbfstool in the built image.
+
+###Tianocore/EDK2
+
+No, just no.
+We went such a long way to get rid of UEFI, and now you try to get it that way?
+There is just far too much unaudited code for this to be a recommendable payload,
+especially since it is not properly working on coreboot yet, so the only way to get it working properly is to use it via a virtual floppy from seaBIOS. This is not beautiful IMO. Just...better leave that thing alone.
