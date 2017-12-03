@@ -125,7 +125,7 @@ chainloader (cbfsdisk)/img/<name of payload>
 
 When you are not sure about the name, you can check it with cbfstool in the built image.
 
-###Tianocore/EDK2
+### Tianocore/EDK2
 
 No, just no.
 We went such a long way to get rid of UEFI, and now you try to get it that way?
