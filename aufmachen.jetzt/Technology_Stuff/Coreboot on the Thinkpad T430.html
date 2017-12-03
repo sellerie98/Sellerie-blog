@@ -78,7 +78,7 @@
 <p>This is the payload I personally prefer, but I did quite some configuring to it to make it work better and more personalized. I recommend going for this in the long run in case you update your kernel more often and therefore it should stay on the harddrive. It accelerates the boot procedure a lot and is minimal, plus you can set a boot password and integrate it right into the flash.</p>
 <p>The only thing that I dont like about it is that finding a proper menuentry example for secondary payloads that I got from another cb user in the end.</p>
 <p>In case someone doesnt find a proper one:</p>
-<p>menuentry ‘&lt;payload name, freely choosable&gt;’ { chainloader (cbfsdisk)/img/<name of payload> }</p>
+<p><code>menuentry '&lt;payload name, freely choosable&gt;' { chainloader (cbfsdisk)/img/&lt;name of payload&gt; }</code></p>
 <p>When you are not sure about the name, you can check it with cbfstool in the built image.</p>
 <h3 id="tianocoreedk2">Tianocore/EDK2</h3>
 <p>No, just no. We went such a long way to get rid of UEFI, and now you try to get it that way? There is just far too much unaudited code for this to be a recommendable payload, especially since it is not properly working on coreboot yet, so the only way to get it working properly is to use it via a virtual floppy from seaBIOS. This is not beautiful IMO. Just…better leave that thing alone.</p>
