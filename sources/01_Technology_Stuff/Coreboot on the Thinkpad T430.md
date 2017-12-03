@@ -91,7 +91,8 @@ I recommend to create at least 3 dumps and create checksums (sha1 at minimum) of
 
 **7.** After checking the file size (It needs to be exactly 4M in size),
 flash the coreboot.rom file to your 4MB chip with
-``# ./flashrom -p linux_spi:dev=/dev/spidev0.0 -w <pathtoromfile> (-c <Recognized chip> (only needed when flashrom puts out an ambiguity and refuses to continue without the precise chip identifier being named))``.
+```# ./flashrom -p linux_spi:dev=/dev/spidev0.0 -w <pathtoromfile> (-c <Recognized chip>)```
+(only needed when flashrom puts out an ambiguity and refuses to continue without the precise chip identifier being named).
 When this is done, you should be good to go.
 
 Optional:
