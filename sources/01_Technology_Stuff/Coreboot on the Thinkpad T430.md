@@ -137,4 +137,5 @@ No, just no.
 We went such a long way to get rid of UEFI, and now you try to get it that way?
 There is just far too much unaudited code for this to be a recommendable payload,
 especially since it is not properly working on coreboot yet, so the only way to get it working properly is to use it via a virtual floppy from seaBIOS. This is not beautiful IMO.
+
 Just... better leave that thing alone.
