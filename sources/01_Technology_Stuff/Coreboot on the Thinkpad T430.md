@@ -119,9 +119,15 @@ The only thing that I dont like about it is that finding a proper menuentry exam
 
 In case someone doesnt find a proper one:
 
-```menuentry '<payload name, freely choosable>' {
-chainloader (cbfsdisk)/img/<name of payload>
-}```
+```menuentry '<payload name, freely choosable>' {```
+
+
+
+```chainloader (cbfsdisk)/img/<name of payload>```
+
+
+
+```}```
 
 When you are not sure about the name, you can check it with cbfstool in the built image.
 
