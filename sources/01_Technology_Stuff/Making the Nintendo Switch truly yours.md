@@ -32,6 +32,7 @@ Sources are also still included, and I will try to update the included binaries 
 	- `https://github.com/fail0verflow/switch-coreboot coreboot`
 	- `https://github.com/fail0verflow/switch-u-boot`
 	- `git clone https://github.com/boundarydevices/imx_usb_loader.git`
-- When cloning and compiling yourself, you also need to put this file into the coreboot directory: [Download](https://gruetzkopf.org/tegra_mtc.bin)
+- When cloning and compiling yourself, you also need to put this file into the coreboot directory: [Download](https://gruetzkopf.org/tegra_mtc.bin)  
+
 You can then start at the 'Run the exploit' section of the readme  file,
 found in 'shofel2/README.md'
