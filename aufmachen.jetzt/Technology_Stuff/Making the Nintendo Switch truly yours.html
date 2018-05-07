@@ -33,9 +33,20 @@ Sources are also still included, and I will try to update the included binaries 
 <li>a <a href="https://twitter.com/fail0verflow/status/988445232445378561">&quot;SwitchX-Pro&quot;</a>, which you can build yourself with <a href="https://github.com/fail0verflow/shofel2/tree/master/rcm-jig">this</a> and two pins of a male micro-USB cable.</li>
 <li>a USB 3.0 (XHCI) port on your device</li>
 <li>a USB type C cable e.g. the Nintendo Switch Pro Controller cable</li>
+<li>a micro-SD card</li>
 </ul>
 <h3 id="software">Software:</h3>
-<p>You can then start at the 'Run the exploit' section of the readme file, found in 'shofel2/README.md'</p>
+<ul>
+<li>either the tar-ed collection mentioned above or the git repos:
+<ul>
+<li><code>git clone https://github.com/fail0verflow/shofel2</code></li>
+<li><code>https://github.com/fail0verflow/switch-linux linux</code></li>
+<li><code>https://github.com/fail0verflow/switch-coreboot coreboot</code></li>
+<li><code>https://github.com/fail0verflow/switch-u-boot</code></li>
+<li><code>git clone https://github.com/boundarydevices/imx_usb_loader.git</code></li>
+</ul></li>
+<li>When cloning and compiling yourself, you also need to put this file into the coreboot directory: <a href="https://gruetzkopf.org/tegra_mtc.bin">Download</a> You can then start at the 'Run the exploit' section of the readme file, found in 'shofel2/README.md'</li>
+</ul>
 <br>
 <a href="index.html">home</a>
 </body>
