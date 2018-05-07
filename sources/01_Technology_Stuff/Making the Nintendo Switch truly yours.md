@@ -13,7 +13,7 @@ At the moment it is a little buggy, e.g. wifi does not work on the first ever bo
 But if you don't care and want to test it out or want to start debugging/developing for this device, you can do this relatively easily.
 
 I prebaked the needed files (and included files) so you can use it more easily:
-[Download](https://aufmachen.jetzt/switch-exploit.tar.bz2)
+[Download](https://aufmachen.jetzt/switch-exploit.tar.bz2)  
 Sources are also still included, and I will try to update the included binaries at least weekly.
 
 ## Requirements:
