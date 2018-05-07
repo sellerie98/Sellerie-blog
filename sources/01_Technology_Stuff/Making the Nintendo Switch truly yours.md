@@ -3,7 +3,7 @@
 #Intro
 Just recently, an anonymous person released a [fatal NVIDIA Tegra BootROM bug](https://pastebin.com/4ykNxzU5).
 Also, the bootROM itself has been leaked.
-Shortly after, [ @q3k released his and @G33KatWork's IDA database](https://twitter.com/q3k/status/988206620005076994)
+Shortly after, [q3k released his and @G33KatWork's IDA database](https://twitter.com/q3k/status/988206620005076994)
 [(direct link to the file)](https://q3k.org/u/6eac2986691922d02e9b25f3b767fd7ea9c44ca18bf7b792884e5c665df5152a.idc),
 [mirror](https://aufmachen.jetzt/6eac2986691922d02e9b25f3b767fd7ea9c44ca18bf7b792884e5c665df5152a.idc).
 However, because of this, fail0verfow also released their exploit using a patched coreboot and u-boot to run a linux on the Nintendo Switch on [github](https://github.com/fail0verflow).
