@@ -1,7 +1,7 @@
 # Installing Coreboot on the Lenovo Thinkpad T430
 
 ## Intro 
-**This is NOT a guide, is this a documentation**, but when you read it, you might get quite some extra infos I collected while doing so.
+**This is NOT a guide, nor is this a documentation**, but when you read it, you might get quite some extra infos I collected while doing so.
 Big thanks to [jn](https://github.com/neuschaefer), TobiX (Link possibly coming soon) and the rest of [@CCCAC](https://twitter.com/CCCAC) for helping me out with giving a shitload of info, experience, (hardware-)resources, strong nerves and a shitload of Club Mate.
 
 The Thinkpad T430 uses two BIOS Chips, which are summarized to use one 12MB storage pool together.
