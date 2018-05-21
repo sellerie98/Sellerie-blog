@@ -27,11 +27,11 @@ Sources are also still included, and I will try to update the included binaries 
 
 ### Software:
 - either the tar-ed collection mentioned above or the git repos:
-	- `git clone https://github.com/fail0verflow/shofel2`
+	- `https://github.com/fail0verflow/shofel2`
 	- `https://github.com/fail0verflow/switch-linux linux`
 	- `https://github.com/fail0verflow/switch-coreboot coreboot`
 	- `https://github.com/fail0verflow/switch-u-boot`
-	- `git clone https://github.com/boundarydevices/imx_usb_loader.git`
+	- `https://github.com/boundarydevices/imx_usb_loader`
 - When cloning and compiling yourself, you also need to put this file into the coreboot directory: [Download](https://gruetzkopf.org/tegra_mtc.bin)  
 
 You can then start at the 'Run the exploit' section of the readme  file,
