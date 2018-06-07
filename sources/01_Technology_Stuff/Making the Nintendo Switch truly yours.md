@@ -26,7 +26,7 @@ Sources are also still included, and I will try to update the included binaries 
 - a micro-SD card
 
 ### Software:
-- either the tar-ed collection mentioned above or the git repos:
+- either download the tar-ed collection mentioned above or clone the following git repos:
 	- `https://github.com/fail0verflow/shofel2`
 	- `https://github.com/fail0verflow/switch-linux linux`
 	- `https://github.com/fail0verflow/switch-coreboot coreboot`
