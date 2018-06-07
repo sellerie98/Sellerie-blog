@@ -48,7 +48,7 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
 ```git wiringpi libncurses5-dev```
 
 - and git clone the following repos:
-  * [https://github.com/flashrom/flashrom.git](https://github.com/flashrom/flashrom)
+  * [https://github.com/flashrom/flashrom](https://github.com/flashrom/flashrom)
   * [https://review.coreboot.org/coreboot](https://review.coreboot.org/coreboot)
 
 
