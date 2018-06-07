@@ -19,7 +19,7 @@
 <a href="/"><h1>Aufmachen.jetzt</h1></a>
 <h1 id="installing-coreboot-on-the-lenovo-thinkpad-t430">Installing Coreboot on the Lenovo Thinkpad T430</h1>
 <h2 id="intro">Intro</h2>
-<p><strong>This is NOT a guide, nor is this a documentation</strong>, but when you read it, you might get quite some extra infos I collected while doing so. Big thanks to <a href="https://github.com/neuschaefer">jn</a>, TobiX (Link possibly coming soon) and the rest of <span class="citation">[@CCCAC]</span>(https://twitter.com/CCCAC) for helping me out with giving a shitload of info, experience, (hardware-)resources, strong nerves and a shitload of Club Mate.</p>
+<p><strong>This is NOT a guide, nor is this a documentation</strong>, but when you read it, you might get quite some extra infos I collected while doing so. Big thanks to <a href="https://github.com/neuschaefer">jn</a>, TobiX (Link possibly coming soon) and the rest of <a href="https://twitter.com/CCCAC">CCCAC</a> for helping me out with giving a shitload of info, experience, (hardware-)resources, strong nerves and a shitload of Club Mate.</p>
 <p>The Thinkpad T430 uses two BIOS Chips, which are summarized to use one 12MB storage pool together. The first chip is a 4MB MX25L3205D and the second chip is a 8MB Winbond and protocol-compatible chip. In my case the second chip was a [WIP]. All (or at least most) chips should be compatible with flashrom, which I used to transfer data onto the chips. <a href="https://github.com/bibanon/Coreboot-ThinkPads/wiki">Coreboot-ThinkPads</a> who created a guide for a whitelist removal for the T430 and a guide on <a href="https://github.com/bibanon/Coreboot-ThinkPads/wiki/Hardware-Flashing-with-Raspberry-Pi">how to flash the BIOS chips of the ThinkPad T/X60 and the Macbook 2,1</a></p>
 <p>Thanks at this point to <a href="https://github.com/bibanon">bibanon</a> not just for these guides but also for giving me the knowledge that gave me the balls to try this project in the first place.</p>
 <p><strong>OBLIGATORY DISCLAIMER:</strong></p>
@@ -31,7 +31,7 @@
 <li>A Raspberry Pi type B (Rev is not relevant, as long as it has GPIO pins) with an SDcard and a valid GNU/Linux OS</li>
 <li>a display</li>
 <li>a keyboard</li>
-<li>A <a href="https://www.amazon.com/CPT-063-Test-Clip-SOIC8-Pomona/dp/B00HHH65T4">SOIC8 chip clamp</a> (This one or a similar one)</li>
+<li>A <a href="https://www.amazon.com/CPT-063-Test-Clip-SOIC8-Pomona/dp/B00HHH65T4">SOIC8 chip clamp</a> or a similar one</li>
 <li><p>6-8 Female-Female Jumper wires</p></li>
 </ul>
 <h3 id="documentation">Documentation:</h3>
@@ -57,7 +57,7 @@
 <ul>
 <li><p>For getting and compiling flashrom and coreboot you need the following dependencies: <code>build-essential pciutils-dev zlib1g-dev  libfti-dev libusb-dev subversion</code><br/> <code>git wiringpi libncurses5-dev</code></p></li>
 <li>and git clone the following repos:</li>
-<li><a href="https://github.com/flashrom/flashrom">https://github.com/flashrom/flashrom.git</a></li>
+<li><a href="https://github.com/flashrom/flashrom" class="uri">https://github.com/flashrom/flashrom</a></li>
 <li><p><a href="https://review.coreboot.org/coreboot" class="uri">https://review.coreboot.org/coreboot</a></p></li>
 </ul>
 <h2 id="preparation">Preparation</h2>

@@ -2,7 +2,7 @@
 
 ## Intro 
 **This is NOT a guide, nor is this a documentation**, but when you read it, you might get quite some extra infos I collected while doing so.
-Big thanks to [jn](https://github.com/neuschaefer), TobiX (Link possibly coming soon) and the rest of [@CCCAC](https://twitter.com/CCCAC) for helping me out with giving a shitload of info, experience, (hardware-)resources, strong nerves and a shitload of Club Mate.
+Big thanks to [jn](https://github.com/neuschaefer), TobiX (Link possibly coming soon) and the rest of [CCCAC](https://twitter.com/CCCAC) for helping me out with giving a shitload of info, experience, (hardware-)resources, strong nerves and a shitload of Club Mate.
 
 The Thinkpad T430 uses two BIOS Chips, which are summarized to use one 12MB storage pool together.
 The first chip is a 4MB MX25L3205D and the second chip is a 8MB Winbond and  protocol-compatible chip.
@@ -26,7 +26,7 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
 - A Raspberry Pi type B (Rev is not relevant, as long as it has GPIO pins) with an SDcard and a valid GNU/Linux OS
 - a display
 - a keyboard
-- A [SOIC8 chip clamp](https://www.amazon.com/CPT-063-Test-Clip-SOIC8-Pomona/dp/B00HHH65T4) (This one or a similar one)
+- A [SOIC8 chip clamp](https://www.amazon.com/CPT-063-Test-Clip-SOIC8-Pomona/dp/B00HHH65T4) or a similar one
 - 6-8 Female-Female Jumper wires
 
 ### Documentation:
@@ -134,9 +134,5 @@ When you are not sure about the name, you can check it with cbfstool in the buil
 
 ### Tianocore/EDK2
 
-No, just no.
-We went such a long way to get rid of UEFI, and now you try to get it that way?
-There is just far too much unaudited code for this to be a recommendable payload,
-especially since it is not properly working on coreboot yet, so the only way to get it working properly is to use it via a virtual floppy from seaBIOS.\
-This is not beautiful.\
-Just... better leave that thing alone.
+TianoCore is the reference implementation for UEFI.
+It uses the "Foundation code" by Intel and features full UEFI functionality.
