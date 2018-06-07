@@ -46,9 +46,10 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
   * For getting and compiling flashrom and coreboot you need the following dependencies:
 ```build-essential pciutils-dev zlib1g-dev  libfti-dev libusb-dev subversion```<br/>
 ```git wiringpi libncurses5-dev```
-  * [flashrom (I recommend the latest version)](https://www.flashrom.org/Downloads)
-  * https://github.com/flashrom/flashrom (A valid git clone url)
-  * [The latest version of coreboot](https://www.coreboot.org/Build_HOWTO#Building_coreboot)
+
+- and git clone the following repos:
+  * [https://github.com/flashrom/flashrom.git](https://github.com/flashrom/flashrom)
+  * [https://review.coreboot.org/coreboot](https://review.coreboot.org/coreboot)
 
 
 ## Preparation
