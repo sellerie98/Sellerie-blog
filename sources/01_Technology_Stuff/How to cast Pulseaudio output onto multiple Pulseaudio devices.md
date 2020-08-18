@@ -13,7 +13,7 @@ Casting audio over the network seems to be quite network-heavy so using this ove
 ## Implementation
 
 You will have to add each pulse endpoint server as sinks:
-`pacmd load-module module-tunnel-sink-new server=<IP or dns-resolvable hostname of endpoint> sink_name=<endpoint_name> channels=2 rate=48000`
+`pacmd load-module module-tunnel-sink-new server=<IP/FQDN> sink_name=<endpoint_name> channels=2 rate=48000`
 
 After that you might have to unload the module `module-combine-sink` because the default config of e.g. Debian usually configures the module in a way that doesnt support us:
 `pacmd unload-module module-combine-sink`
