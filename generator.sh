@@ -1,13 +1,13 @@
 #!/bin/bash
 
-outputFolder="./aufmachen.jetzt"
+outputFolder="./slrie.de"
 description="DESCRIPTION"
 
 mkdir -p $outputFolder;
 
 # initialize the index
-printf "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset="utf-8" />\n<title>Aufmachen.jetzt</title>\n<style type="text/css">body{margin:40px auto;max-width:700px;text-align:justify;line-height:1.6;font-size:16px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}</style>\n</head>\n" > $outputFolder/index.html
-echo "<h1>Aufmachen.jetzt</h1>" >> $outputFolder/index.html
+printf "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset="utf-8" />\n<title>Slrie.de</title>\n<style type="text/css">body{margin:40px auto;max-width:700px;text-align:justify;line-height:1.6;font-size:16px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}</style>\n</head>\n" > $outputFolder/index.html
+echo "<h1>Slrie.de</h1>" >> $outputFolder/index.html
 cat banner >> $outputFolder/index.html
 
 for D in sources/*; do
