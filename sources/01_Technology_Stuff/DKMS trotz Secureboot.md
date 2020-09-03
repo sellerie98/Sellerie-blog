@@ -18,16 +18,21 @@
 
 4. Folgendes Script nach /usr/local/bin/sign-module.sh legen:
 
-``` #!/bin/bash
-     
-    cd ../$kernelver/$arch/module/
-     
-    for kernel_object in *ko; do
-         echo "Signing kernel_object: $kernel_object"
-        /usr/src/linux-headers-$kernelver/scripts/sign-file sha256 /root/MOK.priv /root/MOK.der "$kernel_object";
-    done ``` und mit chmod +x als ausführbar markieren
+```
+#!/bin/bash
+ 
+cd ../$kernelver/$arch/module/
 
-5. Einen Config Override für das Wireguard Kernelmodul nach /etc/dkms/wireguard.conf anlegen:
+for kernel_object in *ko; do
+    echo "Signing kernel_object: $kernel_object"
+    /usr/src/linux-headers-$kernelver/scripts/sign-file sha256 /root/MOK.priv /root/MOK.der "$kernel_object";
+done
+```
+<br>
+und mit chmod +x als ausführbar markieren
+
+5. Einen Config Override für das Wireguard Kernelmodul anlegen:
+`/etc/dkms/wireguard.conf`: <br>
 `POST_BUILD=../../../../../../usr/local/bin/sign-module.sh`
 
 6. Das DKMS-Paket wireguard-dkms via apt installieren bzw reinstallieren
